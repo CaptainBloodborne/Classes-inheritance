@@ -3,25 +3,25 @@
 # exactly the same as in the task.
 class SchoolMember:
     def __init__(self, name, age):
-        self.Name = name
-        self.Age = age
+        self.name = name
+        self.age = age
 
     def show(self):
         return ', '.join(
-            [f"{key}: {value}" for key, value in  self.__dict__.items()]
+            [f"{key.capitalize()}: {value}" for key, value in self.__dict__.items()]
                          )
 
 
 class Teacher(SchoolMember):
     def __init__(self, name, age, salary):
         super().__init__(name, age)
-        self.Salary = salary
+        self.salary = salary
 
 
 class Student(SchoolMember):
     def __init__(self, name, age, grades):
         super().__init__(name, age)
-        self.Grades = grades
+        self.grades = grades
 
 
 if __name__ == "__main__":
