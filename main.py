@@ -2,15 +2,26 @@
 # Don't change names of classes. Create names for the variables
 # exactly the same as in the task.
 class SchoolMember:
-    pass
+    def __init__(self, name, age):
+        self.Name = name
+        self.Age = age
+
+    def show(self):
+        return ', '.join(
+            [f"{key}: {value}" for key, value in  self.__dict__.items()]
+                         )
 
 
-class Teacher:
-    pass
+class Teacher(SchoolMember):
+    def __init__(self, name, age, salary):
+        super().__init__(name, age)
+        self.Salary = salary
 
 
-class Student:
-    pass
+class Student(SchoolMember):
+    def __init__(self, name, age, grades):
+        super().__init__(name, age)
+        self.Grades = grades
 
 
 if __name__ == "__main__":
